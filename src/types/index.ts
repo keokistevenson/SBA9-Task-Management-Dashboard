@@ -32,8 +32,17 @@ export interface TaskItemProps {
 export interface Filter {
     status?: TaskStatus;
     priority?: TaskPriority;
+    searchText?: string;
+    sortBy?: SortOption;
 }
 
 export interface FilterProps {
     onFilterChange: (filters: Filter) => void;
 }
+
+
+export type SortOption =
+  | "dueDate"
+  | "priority"
+  | "createdDate";
+
