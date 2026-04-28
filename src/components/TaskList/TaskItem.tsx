@@ -1,5 +1,7 @@
 import type { TaskItemProps, TaskStatus } from "../../types";
 
+
+// Displays task and provides controls for updating status or deleting the task.
 function TaskItem({ task, onStatusChange, onDelete }: TaskItemProps) {
     return (
         <article >

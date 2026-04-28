@@ -5,13 +5,15 @@ import TaskFilter from "../TaskFilter/TaskFilter";
 import type { Task, Filter, TaskStatus } from "../../types";
 
 function Dashboard() {
+    // Application state for all tasks.
     const [tasks, setTasks] = useState<Task[]>([]);
-    const [filters, setFilters] = useState<Filter>({});
+    const [filters, setFilters] = useState<Filter>({});  // Stores selected search, filter, and sort criteria.
 
     const handleAddTask = (newTask: Task) => {
         setTasks(prevTasks => [...prevTasks, newTask]);
     };
 
+    // Merge updated filter selections into current filters.
     const handleFilterChange = (newFilters: Filter) => {
         setFilters(prevFilters => ({
             ...prevFilters,
@@ -33,6 +35,7 @@ function Dashboard() {
         );
     };
 
+    // Apply search and filter criteria before showing tasks.
     const filteredTasks = tasks.filter(task => {
         const statusPasses = !filters.status || task.status === filters.status;
         const priorityPasses = !filters.priority || task.priority === filters.priority;

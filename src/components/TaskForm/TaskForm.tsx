@@ -5,6 +5,7 @@ interface TaskFormProps {
   onAddTask: (task: Task) => void;
 }
 
+
 function TaskForm({ onAddTask }: TaskFormProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -12,6 +13,7 @@ function TaskForm({ onAddTask }: TaskFormProps) {
   const [dueDate, setDueDate] = useState("");
   const [error, setError] = useState("");
 
+  // Validate input and create a new task object before sending it to the Dashboard.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 

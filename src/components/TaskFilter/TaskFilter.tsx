@@ -9,6 +9,9 @@ function TaskFilter({ onFilterChange }: FilterProps) {
         <section>
             <h2>Filter Tasks</h2>
 
+            {/* ---------- Search ---------- */}
+
+            {/* Search tasks by title or description */}
             <input
                 type="text"
                 placeholder="Search tasks"
@@ -19,6 +22,9 @@ function TaskFilter({ onFilterChange }: FilterProps) {
                 }}
             />
 
+            {/* ---------- Status Filter ---------- */}
+
+            {/* Filter tasks by current progress status */}
             <select
                 onChange={(e) =>
                     onFilterChange({
@@ -31,6 +37,10 @@ function TaskFilter({ onFilterChange }: FilterProps) {
                 <option value="in-progress">In Progress</option>
                 <option value="completed">Completed</option>
             </select>
+
+            {/* ---------- Priority Filter ---------- */}
+
+            {/* Filter tasks by priority level */}
 
             <select
                 onChange={(e) =>
@@ -46,6 +56,9 @@ function TaskFilter({ onFilterChange }: FilterProps) {
             </select>
 
 
+            {/* ---------- Sorting ---------- */}
+
+            {/* Sort filtered tasks by date or priority */}
             <select
                 onChange={(e) =>
                     onFilterChange({
