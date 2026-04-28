@@ -10,6 +10,7 @@ export interface Task {
     status: TaskStatus;
     priority: TaskPriority;
     dueDate: string;
+    createdDate: string;
 }
 
 export interface TaskListProps {
